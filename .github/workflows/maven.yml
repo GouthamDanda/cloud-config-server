@@ -11,7 +11,7 @@ on:
     
 env:
   APP_NAME: cloud-config-server
-  REGISTRY_URL: hub.docker.com
+  REGISTRY_URL: docker.io
   NAMESPACE: dev
   TAG: v1.0.0   
 
@@ -33,7 +33,7 @@ jobs:
         name: my-artifact
         path: ./target/*.jar
   Docker_build:
-    runs-on: [ self-hosted ]
+    runs-on: ubuntu-latest
     steps:
       - name: Download Artifact.
         uses: actions/download-artifact@v3
